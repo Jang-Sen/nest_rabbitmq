@@ -62,8 +62,6 @@ services:
     restart: always
     env_file:
       - .env
-    volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
