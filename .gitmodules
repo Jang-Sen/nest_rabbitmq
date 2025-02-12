@@ -1,0 +1,9 @@
+[submodule "books"]
+    path = books
+    url = https://github.com/Jang-Sen/books.git
+[submodule "customers"]
+    path = customers
+    url = https://github.com/Jang-Sen/customers.git
+[submodule "orders"]
+    path = orders
+    url = https://github.com/Jang-Sen/orders.git
