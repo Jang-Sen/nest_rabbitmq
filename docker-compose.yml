@@ -14,6 +14,7 @@ services:
       - "3002:3002"
     depends_on:
       - database
+      - rabbitmq
     networks:
       - networks
 
@@ -32,6 +33,7 @@ services:
       - "3000:3000"
     depends_on:
       - database
+      - rabbitmq
     networks:
       - networks
 
@@ -50,6 +52,7 @@ services:
       - "3001:3001"
     depends_on:
       - database
+      - rabbitmq
     networks:
       - networks
 
@@ -59,8 +62,21 @@ services:
     restart: always
     env_file:
       - .env
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
+    networks:
+      - networks
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.13.3-management
+    env_file:
+      - .env
+    ports:
+      - "15672:15672"
+      - "5672:5672"
     networks:
       - networks
 
