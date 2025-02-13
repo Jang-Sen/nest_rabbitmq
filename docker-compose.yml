@@ -9,7 +9,7 @@ services:
       - ./customers:/usr/src/customers
     env_file:
       - .env
-    command: npm run start:dev
+    command: npm run start:prod
     ports:
       - "8010:8010"
     depends_on:
@@ -28,7 +28,7 @@ services:
       - ./books:/usr/src/books
     env_file:
       - .env
-    command: npm run start:dev
+    command: npm run start:prod
     ports:
       - "8020:8020"
     depends_on:
@@ -47,7 +47,7 @@ services:
       - ./orders:/usr/src/orders
     env_file:
       - .env
-    command: npm run start:dev
+    command: npm run start:prod
     ports:
       - "8030:8030"
     depends_on:
